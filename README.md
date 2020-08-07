@@ -1,10 +1,10 @@
-# Z-PracticeProjectsREADME
+#README
 
 ## Introduction
 ----------------
 
 
-Hello, this my *first* README in my *first* public repository on Github.
+Hello, this my *first* README in my *first* public repository on Github!
 
 Within this repository, I hope to plan, complete, and document
 my attempt at various interesting beginner projects on my journey to become 
@@ -17,7 +17,8 @@ well versed and proficient in using Python and/or other programming languages.
 ### 'Completed' Projects
 ------------------------
 
-Project Name | Project Description
+Project Name  | Project Name | Desc.
+01  | Mad Libs Generator  | Fill a story template based on user input
 
 ### List of Possible Projects
 ----------------------------------

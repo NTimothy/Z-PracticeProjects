@@ -16,9 +16,7 @@ well versed and proficient in using Python and/or other programming languages.
 
 ### 'Completed' Projects
 ------------------------
-
-Project Name  | Project Name | Desc.
-01  | Mad Libs Generator  | Fill a story template based on user input
+01. Mad Libs Generator  | Fill a story template based on user input
 
 ### List of Possible Projects
 ----------------------------------

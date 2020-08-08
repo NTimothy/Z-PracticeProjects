@@ -40,4 +40,22 @@ for x in f_strip:
 
 print(sum(fuel))        # summation of module fuel costs
 
-# Correct answer verified: 3386686
+# Part 1 Solution: 3386686
+
+# Part 2: Accounting for additional fuel required for fuel
+
+f_1 = f_strip
+
+total = 0
+for x in f_1:
+    y = calc(x)
+    while True:
+        if 0.5 < y:
+            total += y
+            y = calc(y)
+            continue
+        else:
+            break
+
+print("Estimated Fuel Costs:", total)
+# Part 2 Solution: 5077155 

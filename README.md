@@ -12,19 +12,20 @@ well versed and proficient in using Python and/or other programming languages.
 ## Project List
 ---------------
 
-### 'Completed' Projects
+### 'Functional' Projects
 ------------------------
 
 Project | Description
 ------------ | -------------
 Mad Libs Generator  | Fill a story template based on user input
+Virtual Casino  | Give player a set amount of virtual currency and allow player to play games of chance
 
 ### List of Possible Projects
 ----------------------------------
-1. Mad Libs Generator
+1. Mad Libs Generator [x]
 2. Number Guessing
 3. Text-based Adventure Game
-4. Dice Rolling Simulator
+4. Dice Rolling Simulator [x]
 5. Hangman
 6. Contact Book
 7. Email Slicer

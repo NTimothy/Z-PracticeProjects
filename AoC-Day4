@@ -1,6 +1,7 @@
+# Advent of Code 2019
+# Day 4: Secure Container
+# https://adventofcode.com/2019/day/4
 # Puzzle input 240298 - 784956
-
-
 
 # Returns True if contains 6 digits only
 def digits(x):

@@ -57,10 +57,10 @@ def increasing(x):
             i+=1
     return ans
 
-Part 2
-"Messy and specific"
-622 incorrect
-748 correct
+# Part 2
+# "Messy and specific"
+# 622 incorrect
+# 748 correct
 def double2(x):
     global ans
     ans = False

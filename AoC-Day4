@@ -1,15 +1,17 @@
-# Advent of Code 2019
-# Day 4: Secure Container
-# https://adventofcode.com/2019/day/4
 # Puzzle input 240298 - 784956
+
+# Given specific range
+a = 240298
+b = 784956
+
 
 # Returns True if contains 6 digits only
 def digits(x):
-    a = str(x)
-    if not a.isdigit:
+    z = str(x)
+    if not z.isdigit:
         return False
     digit = 0
-    for i in a:
+    for _i in z:
         digit +=1
     if digit ==6:
         return True
@@ -26,8 +28,6 @@ def wrange(x,a,b):
 # Returns True if contains matching adjacent digits
 def double(x):
     a = str(x)
-    b = []
-    b.append(a)
     i = 0
     ans = False
     while i <= 5:
@@ -44,8 +44,6 @@ def double(x):
 # Returns True if adjacent digits are never decreasing
 def increasing(x):
     a = str(x)
-    b = []
-    b.append(a)
     i = 0
     ans = True
     while i <= 5:
@@ -59,34 +57,65 @@ def increasing(x):
             break
     return ans
 
-# def nogroups(x):
-#     return ans
-# Place holder for Part 2
+# Part 2
+# "Messy and specific"
+#622 incorrect
+def double2(x):
+    a = str(x)
+    ans = False
+    _0 = a[0]
+    _1 = a[1]
+    _2 = a[2]
+    _3 = a[3]
+    _4 = a[4]
+    _5 = a[5]
+    if _0 == _1:
+        # print("Index 0 and 1 match", _0, _1)
+        ans = True
+        if (_0 == _2) and (_0 == _3):
+            # print("Group of 3+", _0, _1, _2)
+            ans = False
+    if _1 == _2:
+        # print("Index 1 and 2 match", _1, _2)
+        ans = True
+        if (_0 == _1) or (_2 == _3):
+            # print("Group of 3+")
+            ans = False
+    if _2 == _3:
+        # print("Index 2 and 3 match", _2, _3)
+        ans = True
+        if (_1 == _2) or (_3 == _4):
+            # print("Group of 3+")
+            ans = False
+    if _3 == _4:
+        # print("Index 3 and 4 match", _3, _4)
+        ans = True
+        if (_2 == _3) or (_4 == _5):
+            # print("Group of 3+")
+            ans = False
+    if _4 == _5:
+        # print("Index 4 and 5 match", _4, _5)
+        ans = True
+        if (_3 == _4):
+            # print("Group of 3+")
+            ans = False
+    return ans
 
-while True:
-    try:
-        # a = int(input("What is the minimum number?"))
-        # b = int(input("What is the highest number?"))
-        a = 240298
-        b = 784956
-        break
-    except:
-        print("Not an acceptable number.")
-        continue
+
 
 count = 0
-# count2 = 0
+count2 = 0
 for i in range(a,b):
     cond1 = digits(i)
     cond2 = wrange(i,a,b)
     cond3 = double(i)
     cond4 = increasing(i)
+    cond5 = double2(i)
     if cond1 and cond2 and cond3 and cond4:
         count += 1
-        # cond5 = nogroups(i)
-        # if cond5:
-        #     print(count2)
-        #     count2 += 1
+    if cond1 and cond2 and cond5 and cond4:
+            count2 +=1
+            print(i)
 
 print("\n", count, "number of possible passwords within Part 1 Criteria.")
-# print("\n", count2, "number of possible passwords within Part 2 Criteria.")
+print("\n", count2, "number of possible passwords within Part 2 Criteria.")

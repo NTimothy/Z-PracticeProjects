@@ -2,7 +2,7 @@
 
 # Given specific range
 a = 240298
-b = 784956
+b = 784957
 
 
 # Returns True if contains 6 digits only
@@ -20,7 +20,7 @@ def digits(x):
 
 # Returns true if within ranges a,b
 def wrange(x,a,b):
-    if a <= x <= b:
+    if a < x < b:
         return True
     else:
         return False
@@ -54,15 +54,17 @@ def increasing(x):
                 i += 1
                 continue
         except IndexError:
-            break
+            i+=1
     return ans
 
-# Part 2
-# "Messy and specific"
-#622 incorrect
+Part 2
+"Messy and specific"
+622 incorrect
+748 correct
 def double2(x):
-    a = str(x)
+    global ans
     ans = False
+    a = str(x)
     _0 = a[0]
     _1 = a[1]
     _2 = a[2]
@@ -72,8 +74,8 @@ def double2(x):
     if _0 == _1:
         # print("Index 0 and 1 match", _0, _1)
         ans = True
-        if (_0 == _2) and (_0 == _3):
-            # print("Group of 3+", _0, _1, _2)
+        if (_0 == _1) and (_1 == _2):
+            # print("Group of 3+")
             ans = False
     if _1 == _2:
         # print("Index 1 and 2 match", _1, _2)
@@ -96,11 +98,10 @@ def double2(x):
     if _4 == _5:
         # print("Index 4 and 5 match", _4, _5)
         ans = True
-        if (_3 == _4):
+        if (_3 == _4) and (_4 == _5):
             # print("Group of 3+")
             ans = False
-    return ans
-
+    return ans    
 
 
 count = 0

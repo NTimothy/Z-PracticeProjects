@@ -1,0 +1,79 @@
+import numpy as np
+np.set_printoptions(linewidth=300)
+
+f = open(r"C:\Users\ntimo\PycharmProjects\Testing\Z-PracticeProjects\day8", "r")
+data = []
+while True:
+    byte = f.read(1)
+    if not byte:
+        break
+    data.append(int(byte))  # list data contains raw integer input
+   
+   
+def layerCount(data,length,width):
+    total_area = len(data)
+    area = length*width
+    count = int(total_area/(area))
+    return count,area                   # should return 100 layers, 150 pixels pixels
+
+
+def listLength(list):
+    ans = len(list)
+    return ans
+
+
+def histogram(list,k, p):
+    hist = {}
+    for _i in list:
+        if _i in hist:
+            hist[_i] += 1
+        else:
+            hist[_i] = 1
+    if p == 1:
+        print(f"Key | Freq.")
+        for key, value in hist.items():
+            print(f"{key} : {value}")
+        print("\n")
+    # else:
+    #     return hist[k]
+
+
+def newArr(type, area, row,col):
+    if type == 0:
+        arr = np.zeros(area).reshape(row, col)
+    elif type == 1:
+        arr = np.zeros(area).reshape(row, col)
+    return arr
+
+row = h = 6   # tall/rows
+col = w = 25   # wide/columns
+layers,area = layerCount(data,w,h)
+
+allDict = {}
+zeroDict = {}
+_i=0
+
+for lay in range(layers):
+    x = newArr(0, area, 6, 25)              # loops to create temporary 2D numpy array from data
+    for row in range(h):
+        for col in range(w):
+            x[row][col] = data[_i]
+            key_lay = f'L{lay}|{data[_i]}'
+            if key_lay in allDict:
+                allDict[key_lay] += 1          # counts frequency of the data value
+                if data[_i] ==0:               
+                    zeroDict[key_lay]+=1      # separate dictionary for zeros only
+            else:
+                allDict[key_lay] = 1
+                if data[_i] ==0:
+                    zeroDict[key_lay]=1
+            _i += 1
+
+# for key, value in allDict.items():
+#     print(f"{key} : {value}")
+#
+
+# for key,value in zeroDict.items():
+#     print(f"{key} : {value}")
+
+print(min(zeroDict, key=allDict.get))       # prints lowest key value in dictionary containing only zero digit values

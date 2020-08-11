@@ -9,44 +9,20 @@ while True:
         break
     data.append(int(byte))  # list data contains raw integer input
    
-   
+# should return 100 layers, 150 pixels pixels; included in case input data amount is different lengths
 def layerCount(data,length,width):
     total_area = len(data)
     area = length*width
     count = int(total_area/(area))
-    return count,area                   # should return 100 layers, 150 pixels pixels
-
-
-def listLength(list):
-    ans = len(list)
-    return ans
-
-
-def histogram(list,k, p):
-    hist = {}
-    for _i in list:
-        if _i in hist:
-            hist[_i] += 1
-        else:
-            hist[_i] = 1
-    if p == 1:
-        print(f"Key | Freq.")
-        for key, value in hist.items():
-            print(f"{key} : {value}")
-        print("\n")
-    # else:
-    #     return hist[k]
-
-
+    return count,area                   
+    
 def newArr(type, area, row,col):
     if type == 0:
         arr = np.zeros(area).reshape(row, col)
-    elif type == 1:
-        arr = np.zeros(area).reshape(row, col)
     return arr
 
-row = h = 6   # tall/rows
-col = w = 25   # wide/columns
+row = h = 6   # height aka rows
+col = w = 25   # width aka columns
 layers,area = layerCount(data,w,h)
 
 allDict = {}
@@ -71,9 +47,34 @@ for lay in range(layers):
 
 # for key, value in allDict.items():
 #     print(f"{key} : {value}")
-#
 
 # for key,value in zeroDict.items():
 #     print(f"{key} : {value}")
 
 print(min(zeroDict, key=allDict.get))       # prints lowest key value in dictionary containing only zero digit values
+# Part 1 Answer: 19 * 125 = 2375
+
+
+### Part 2 ###
+_i=0
+z = np.full((6,26),-1)                      # Base Image layer
+x = newArr(0, area, 6, 25)                  # temporary x array
+for lay in range(layers):
+    for row in range(h):
+        for col in range(w):                
+            x[row][col] = data[_i]          # populates temporary x array with data
+            _i += 1
+    for row in range(h):
+        for col in range(w):
+            if z[row][col] == -1 and x[row][col] != 2:              # Populates base image layer if pixel is not defined
+                z[row][col] = x[row][col]
+    x = newArr(0, area, 6, 25)                                      # Refresh array for nexy=t layer
+
+print(z)
+# Output:
+# [[ 1  1  1  0  0  1  0  0  1  0  1  0  0  1  0  1  1  1  0  0  1  0  0  0  1 -1]
+#  [ 1  0  0  1  0  1  0  1  0  0  1  0  0  1  0  1  0  0  1  0  1  0  0  0  1 -1]
+#  [ 1  0  0  1  0  1  1  0  0  0  1  1  1  1  0  1  0  0  1  0  0  1  0  1  0 -1]
+#  [ 1  1  1  0  0  1  0  1  0  0  1  0  0  1  0  1  1  1  0  0  0  0  1  0  0 -1]
+#  [ 1  0  1  0  0  1  0  1  0  0  1  0  0  1  0  1  0  1  0  0  0  0  1  0  0 -1]
+#  [ 1  0  0  1  0  1  0  0  1  0  1  0  0  1  0  1  0  0  1  0  0  0  1  0  0 -1]]

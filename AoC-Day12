@@ -12,8 +12,7 @@ input = [5, 4, 4, -11, -11, -3, 0, 7, 0, -13, 2, 10]
 p = np.asarray(input).reshape(4,3)
 v = np.full(12,0).reshape(4,3)
 
-total = 0
-energy = 0
+total = 0       # zero starting energy
 time = 0
 
 for time in range(1000):
@@ -35,14 +34,12 @@ for time in range(1000):
     time +=1
 
 for _i in range(4):
-    energy = 0
     _pe = 0
     _ke = 0
     for _j in range(3):
         _pe += abs(p[_i][_j])
         _ke += abs(v[_i][_j])
-    energy += (_pe*_ke)
-    total += energy
+    total += (_pe*_ke)
 
 print(f"\n@ Step #{time}")
 print(f"Positions:\n", p)

@@ -6,7 +6,7 @@ Hello world! This my *first* README in my *first* public repository on Github!
 Within this repository, I hope to plan, attempt, and document progress
 in my programming projects.
 My ongoing goal is to become proficient with Python and/or other programming languages
-especially in regards to data science fields applications.
+especially in regards to data science.
 
 
 ## Project List

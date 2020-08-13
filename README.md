@@ -1,24 +1,25 @@
 ## Introduction
 ----------------
 
+Hello world! This my *first* README in my *first* public repository on Github!
 
-Hello, this my *first* README in my *first* public repository on Github!
-
-Within this repository, I hope to plan, complete, and document
-my attempt at various interesting beginner projects on my journey to become 
-well versed and proficient in using Python and/or other programming languages.
+Within this repository, I hope to plan, attempt, and document progress
+in my programming projects.
+My ongoing goal is to become proficient with Python and/or other programming languages
+especially in regards to data science fields applications.
 
 
 ## Project List
 ---------------
 
-### 'Functional' Projects
+### Attempted Projects
 ------------------------
 
 Project | Description
 ------------ | -------------
 Mad Libs Generator  | Fill a story template based on user input
 Virtual Casino  | Give player a set amount of virtual currency and allow player to play games of chance
+Advent of Code (2019) | A series of programming puzzles
 
 ### List of Possible Projects
 ----------------------------------

@@ -1,5 +1,5 @@
 # Advent of Code 2019
-# Day 5: Sunny with a Chance of Asteroids Pt2
+# Day 5: Sunny with a Chance of Asteroids
 # https://adventofcode.com/2019/day/5
 
 diagnostic_program = [3,225,1,225,6,6,1100,1,238,225,104,0,1102,89,49,225,1102,35,88,224,101,-3080,224,224,4,224,102,
@@ -37,7 +37,9 @@ def initialize(opcode):
     _mode3 = 0
     if (_id == 3) or (_id == 4):
         _step = 2
-    else:  # (_id == 1) or (_id == 2)
+    elif (_id == 5) or (_id == 6):
+        _step = 3
+    else:  # (_id == 1) or (_id == 2) or (_id ==7) or (_id ==8)
         _step = 4
     return _id, _mode1, _mode2, _mode3, _step
 
@@ -76,6 +78,30 @@ def computer(program):
         elif opcode[0] == 4:
             print(params[0])
             i += step
+        elif opcode[0] == 5:
+            if params[0] != 0:
+                i = params[1]
+            else:
+                i += step
+        elif opcode[0] == 6:
+            if params[0] == 0:
+                i = params[1]
+            else:
+                i += step
+        elif opcode[0] == 7:
+            if params[0] < params[1]:
+                p[p[i + 3]] = 1
+            else:
+                p[p[i + 3]] = 0
+            i += step
+        elif opcode[0] == 8:
+            if params[0] == params[1]:
+                p[p[i + 3]] = 1
+            else:
+                p[p[i + 3]] = 0
+            i += step
 
 computer(diagnostic_program)
-# Ans: 7839346
+
+# Pt1: if user input = 1; Ans: 7839346
+# Pt2: if user input = 5; Ans: 447803

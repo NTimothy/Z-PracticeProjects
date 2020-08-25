@@ -1,5 +1,5 @@
 # Advent of Code 2019
-# Day 5: Sunny with a Chance of Asteroids
+# Day 5: Sunny with a Chance of Asteroids Pt2
 # https://adventofcode.com/2019/day/5
 
 diagnostic_program = [3,225,1,225,6,6,1100,1,238,225,104,0,1102,89,49,225,1102,35,88,224,101,-3080,224,224,4,224,102,
@@ -29,89 +29,53 @@ diagnostic_program = [3,225,1,225,6,6,1100,1,238,225,104,0,1102,89,49,225,1102,3
                       223,108,677,677,224,102,2,223,223,1005,224,629,1001,223,1,223,8,677,677,224,1002,223,2,223,1005,
                       224,644,1001,223,1,223,7,677,226,224,102,2,223,223,1006,224,659,1001,223,1,223,1007,226,677,224,
                       102,2,223,223,1005,224,674,101,1,223,223,4,223,99,226]
-class Instructions:
-    @staticmethod
-    def find_opcode(instr):
-        opcode = int(instr % 100)
-        return opcode
 
-    @staticmethod
-    def find_step(opcode):
-        if opcode == 1 or opcode == 2:
-            return 4
-        elif opcode == 3 or opcode == 4:
-            return 2
-        elif opcode == 99:
-            return 0
-        else:
-            print("Invalid Opcode")
+def initialize(opcode):
+    _id = int(opcode % 100)
+    _mode1 = int((opcode / 100) % 10)
+    _mode2 = int((opcode / 1000) % 10)
+    _mode3 = 0
+    if (_id == 3) or (_id == 4):
+        _step = 2
+    else:  # (_id == 1) or (_id == 2)
+        _step = 4
+    return _id, _mode1, _mode2, _mode3, _step
 
-    @staticmethod
-    def find_mode(param):
-        mode = int((param / 100) % 10)
-        mode1 = int((param / 100) % 10)  # Mode 1, 100 place
-        mode2 = int((param / 1000) % 10)  # Mode 2, 1000 place
-        return mode, mode1, mode2
-
-    @staticmethod
-    def opcode1(x, y):
-        sum = x + y
-        return sum
-
-    @staticmethod
-    def opcode2(x, y):
-        product = x * y
-        return product
-
-    @staticmethod
-    def execute(opcode, param1, param2):
-        if opcode == 1:
-            _z = Instructions.opcode1(param1, param2)
-        elif opcode == 2:
-            _z = Instructions.opcode2(param1, param2)
-        return _z
+def define_param(p,i,opcode,step):
+    params = []
+    for x in range(1,int(step)):
+        try:
+            if opcode[x] == 1:
+                params.append(p[i+x])
+            elif opcode[x] == 0:
+                params.append(p[p[i+x]])
+        except IndexError:
+            pass
+    return params
 
 def computer(program):
-    z = program
-    i=0
-    while i <= len(z):
-        opcode = Instructions.find_opcode(z[i])
-        if opcode == 99:
-            print("Program Finished.")
+    p = program
+    i = 0
+    while i < len(p):
+        opcode = initialize(p[i])
+        step = opcode[4]
+        params = define_param(p,i,opcode,step)
+
+        if opcode[0] == 99:
+            print("Program Finished")
             break
-        j = Instructions.find_step(opcode)
-        mode, mode1, mode2 = "-1", "-1", "-1"
-        param, param1, param2 = "-1", "-1", "-1"
-        if opcode == 1 or opcode == 2:
-            mode1 = Instructions.find_mode(z[i])[1]
-            mode2 = Instructions.find_mode(z[i])[2]
-        elif opcode == 3 or opcode == 4:
-            mode = Instructions.find_mode(z[i])[0]
-
-
-        if mode == "-1":
-            if mode1 == 0:
-                param1 = z[z[i+1]]
-            elif mode1 == 1:
-                param1 = z[i+1]
-            if mode2 == 0:
-                param2 = z[z[i+2]]
-            elif mode2 == 1:
-                param2 = z[i+2]
-        else:
-            if mode == 0:
-                param = z[z[i+1]]
-            else:
-                param = z[i+1]
-
-        if opcode == 3:
-            z[z[i+1]] = int(input("Provide System ID;"))
-        elif opcode == 4:
-            print(param)
-        else:
-            z[z[i+3]] = Instructions.execute(opcode, param1, param2)
-        i += j
+        elif opcode[0] == 1:
+            p[p[i + 3]] = params[0] + params[1]
+            i += step
+        elif opcode[0] == 2:
+            p[p[i + 3]] = params[0] * params[1]
+            i += step
+        elif opcode[0] == 3:
+            p[p[i+1]] = int(input("Provide System ID: "))
+            i += step
+        elif opcode[0] == 4:
+            print(params[0])
+            i += step
 
 computer(diagnostic_program)
-
 # Ans: 7839346

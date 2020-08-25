@@ -102,3 +102,34 @@ max_signal = max_amp(acs_program)[1]
 print(f"Highest Signal: {max_signal}")
 
 # Ans:199988
+
+# Part  IN PROGRESS
+
+sample4 = [3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5]
+
+def feedback_loop(software):
+    combinations = permutations([5,6,7,8,9])
+    thruster_signals = {}
+    for combo in list(combinations):
+        amp = 0
+        last = 0
+        k=0
+        while k in range(5):
+            print(f"k:{k}")
+            print(amp)
+            amp = computer(software, combo[k], last)
+            if amp == -99:
+                break
+            else:
+                last = amp
+                k+=1
+                if k == 5:
+                    k = 0
+        thruster_signals[combo] = last
+    keymax = max(thruster_signals, key=thruster_signals.get)
+    return keymax, thruster_signals[keymax]
+
+
+max_signal = feedback_loop(sample4)[1]
+
+print(f"Highest Signal: {max_signal}")

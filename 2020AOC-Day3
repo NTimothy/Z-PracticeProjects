@@ -1,0 +1,67 @@
+# Advent of Code 2020
+# --- Day 3: Toboggan Trajectory ---
+
+def readFile():
+    try:
+        f = open(r"C:\Users\ntimo\PycharmProjects\Testing\Z-PracticeProjects\2020_day3", "r")
+        line = f.readline()
+        p_input = []
+        count = 0
+        while line:
+            p_input.append(str(line))
+            line = f.readline()
+            count +=1
+    finally:
+        f.close()
+        return p_input, count
+
+# Obtain puzzle input, total height, and width length before repeat
+input, y_tot = readFile()
+repeat_length = len(input[0].split("\n")[0])
+
+def checkTree(x,y,input):
+    try:
+        pos = str(input[y][x])
+        if pos == "#":
+            return True
+
+        else:
+            return False
+    finally:
+        pass
+
+
+def countTrees(dx,dy,input):
+    # starting position x and y
+    x = 0
+    y_pos = 0
+    tree_count = 0
+    while (y_pos < y_tot):
+        # Change in slope
+        x += dx
+        y_pos -= dy
+
+        # Accounts for "repeated" x geology
+        x_2 = (x % 31)
+
+        # Calls function to check for tree
+        if y_pos <y_tot:
+            check = checkTree(x_2,y_pos,input)
+        else:
+            break
+        if check:
+            tree_count +=1
+    return tree_count
+
+ans = countTrees(3,-1,input)
+print(ans)
+
+## Part 2
+
+a = countTrees(1,-1,input)
+b = countTrees(3,-1,input) # Part 1
+c = countTrees(5,-1,input)
+d = countTrees(7,-1,input)
+e = countTrees(1,-2,input)
+ans = a*b*c*d*e
+print(ans)

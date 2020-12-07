@@ -5,8 +5,7 @@ Hello world! This my *first* README in my *first* public repository on Github!
 
 Within this repository, I hope to plan, attempt, and document progress
 in my programming projects.
-My ongoing goal is to become proficient with Python and/or other programming languages
-especially in regards to data science.
+My ongoing goal is to become proficient with Python and other programming languages.
 
 
 ## Project List
@@ -19,9 +18,12 @@ Project | Description
 ------------ | -------------
 Mad Libs Generator  | Fill a story template based on user input
 Virtual Casino  | Give player a set amount of virtual currency and allow player to play games of chance
+Simple Webpage from Scratch | Basic framework using HTML and CSS
+2D RPG Style Game | Built using GDScript in Godot Engine
 Advent of Code (2019) | A series of programming puzzles
+Advent of Code (2020) | A series of programming puzzles
 
-### List of Possible Projects
+### List of Possible Python Projects
 ----------------------------------
 1. Mad Libs Generator [x]
 2. Number Guessing

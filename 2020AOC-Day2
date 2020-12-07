@@ -23,7 +23,7 @@ def validatePass(min,max,char,password):
     c = str(char)
     p = str(password)
 
-    # Counts occurences of a given character in a password
+    # Counts occurrences of a given character in a password
     for i in p:
         if i == c:
             count += 1

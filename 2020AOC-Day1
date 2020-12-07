@@ -52,7 +52,7 @@ while count1 < total:
             if sum == 2020:
                 product = p_input[count1]*p_input[count2]*p_input[count3]
                 print(product)
-                print(p_input[count1], "|", p_input[count1], "|", p_input[count1])
+                print(p_input[count1], "|", p_input[count2], "|", p_input[count3])
                 count1, count2, count3 = total+1, total+1, total+1
             else:
                 count3 +=1

@@ -1,0 +1,124 @@
+import re
+
+def organize():
+    passportID = 0
+    with open(r"2020_day4") as file:
+        line = file.readline()
+        while line:
+            if line != "\n":                                # if info for the same passport
+                if passportID not in collection:
+                    collection[passportID] = {}
+                x = line.strip().split(" ")                 # strip & split
+                item = 0                                    # in the case of multiple fields on a single line
+                while item < 10:                            # can handle up to (10) fields per line
+                    try:
+                        key = x[item][0:3]                  # grabs field abbreviation [first three char]
+                        value = str(x[item][4:])                 # grabs value
+                        collection[passportID][key] = value   # adds key:value pair to dict
+                        item += 1                           # moves to next item
+                    except IndexError:
+                        break
+                line = file.readline()
+            else:
+                line = file.readline()
+                passportID += 1
+
+
+def check_fields(dictionary, index, cond):
+    byr = False
+    iyr = False
+    eyr = False
+    hgt = False
+    hcl = False
+    ecl = False
+    pid = False
+    cid = False
+    if cond == "part1":
+        if 'byr' in dictionary[index]:
+            byr = True
+        if 'iyr' in dictionary[index]:
+            iyr = True
+        if 'eyr' in dictionary[index]:
+            eyr = True
+        if 'hgt' in dictionary[index]:
+            hgt = True
+        if 'hcl' in dictionary[index]:
+            hcl = True
+        if 'ecl' in dictionary[index]:
+            ecl = True
+        if 'pid' in dictionary[index]:
+            pid = True
+        # if 'cid' in dictionary[index]:
+        #     cid = True
+        if byr and iyr and eyr and hgt and hcl and ecl and pid:
+            return True
+        else:
+            return False
+    elif cond == "part2":
+        if 'byr' in dictionary[index]:
+            x = dictionary[index]['byr']
+            if 1920 <= int(x) <= 2002:
+                byr = True
+        if 'iyr' in dictionary[index]:
+            x = dictionary[index]['iyr']
+            if 2010 <= int(x) <= 2020:
+                iyr = True
+        if 'eyr' in dictionary[index]:
+            x = dictionary[index]['eyr']
+            if 2020 <= int(x) <= 2030:
+                eyr = True
+        if 'hgt' in dictionary[index]:
+            x = dictionary[index]['hgt']
+            _unit = x[-2:]
+            _num = x[:-2]
+            if _unit == "cm":
+                if 150 <= int(_num) <= 193:
+                    hgt = True
+            elif _unit == "in":
+                if 59 <= int(_num) <= 76:
+                    hgt = True
+        if 'hcl' in dictionary[index]:
+            x = dictionary[index]['hcl']
+            if (x[0] == "#") and (len(x[1:]) == 6):
+                _valid_char = special_match(x[1:])
+                if _valid_char:
+                    hcl = True
+        if 'ecl' in dictionary[index]:
+            x = dictionary[index]['ecl']
+            if x in ("amb", "blu", "brn", "gry", "grn", "hzl", "oth"):
+                ecl = True
+        if 'pid' in dictionary[index]:
+            x = dictionary[index]['pid']
+            if len(x) == 9:
+                pid = True
+        # if 'cid' in dictionary[index]:
+        #     x = dictionary[index]['cid']
+        #     cid = True
+        if byr and iyr and eyr and hgt and hcl and ecl and pid:
+            return True
+
+
+def count_valid(dictionary,part):
+    index = 0
+    valid = 0
+    max = len(dictionary)
+    while index < max:
+        check = check_fields(dictionary, index, part)
+        if check:
+            valid += 1
+        index += 1
+    return valid
+
+
+def special_match(strg, search=re.compile(r'[^a-fA-F0-9]').search):
+    return not bool(search(strg))
+
+
+collection = {}
+passport = {}
+organize()
+ans1 = count_valid(collection,"part1")
+ans2 = count_valid(collection,"part2")
+print("Part 1 | Valid Passports:",ans1)   #   Ans = 235
+print("Part 2 | Valid Passports:",ans2)   #   Ans = 194
+

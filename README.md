@@ -19,9 +19,11 @@ Project | Description
 Mad Libs Generator  | Fill a story template based on user input
 Virtual Casino  | Give player a set amount of virtual currency and allow player to play games of chance
 Simple Webpage from Scratch | Basic framework using HTML and CSS
-2D RPG Style Game | Built using GDScript in Godot Engine
+Simple Text Adventure Demo | Built using Twine with SugarCube, CSS, and HTML
+2D RPG Style ~~Game~~ Demo | Built using Godot with GDScript, MSPaint, and GIMP
 Advent of Code (2019) | A series of programming puzzles
 Advent of Code (2020) | A series of programming puzzles
+Daily Punch-In Timer | Basic countdown timer application built using Godot with GDSCript
 
 ### List of Possible Python Projects
 ----------------------------------

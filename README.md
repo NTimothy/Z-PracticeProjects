@@ -52,7 +52,6 @@ Daily Punch-In Timer | Basic countdown timer application built using Godot with 
 15. Rock, Paper, Scissors
 16. Leap it!
 17. Find out, Fibonacci!
-
 Python Project Ideas: Intermediate Level
 18. Calculator
 19. ~~Countdown Clock and Timer~~ (GDScript)
@@ -67,7 +66,6 @@ Python Project Ideas: Intermediate Level
 28. Post-it Notes
 29. Site Connectivity Checker
 30. Directory Tree Generator
-
 Python Project Ideas: Advanced Level
 31. Speed Typing Test
 32. Content Aggregator

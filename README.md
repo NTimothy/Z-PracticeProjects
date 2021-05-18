@@ -11,6 +11,7 @@ My ongoing goal is to become proficient with Python and other programming langua
 ## Project List
 ---------------
 
+
 ### Attempted Projects
 ------------------------
 
@@ -25,12 +26,19 @@ Advent of Code (2019) | A series of programming puzzles
 Advent of Code (2020) | A series of programming puzzles
 Daily Punch-In Timer | Basic countdown timer application built using Godot with GDScript
 
+### Other Programming Languages
+-------------------------
+
+**GDScript** - A high-level, dynamically typed programming language used to create content. It uses a syntax similar to Python (blocks are indent-based and many keywords are similar). Its goal is to be optimized for and tightly integrated with Godot Engine, allowing great flexibility for content creation and integration.
+
+**SugarCube** - An alternate JavaScript library for Twine that handles media, media playback functions, advanced linking for passages, UI elements, save files, and much more.
+
 ### List of Possible Python Projects
 ----------------------------------
-1. Mad Libs Generator [x]
+~~1. Mad Libs Generator~~
 2. Number Guessing
-3. Text-based Adventure Game
-4. Dice Rolling Simulator [x]
+~~3. Text-based Adventure Game~~ (Sugarcube 2.x)
+4. Dice Rolling Simulator
 5. Hangman
 6. Contact Book
 7. Email Slicer
@@ -46,12 +54,12 @@ Daily Punch-In Timer | Basic countdown timer application built using Godot with 
 17. Find out, Fibonacci!
 Python Project Ideas: Intermediate Level
 18. Calculator
-19. Countdown Clock and Timer
+~~19. Countdown Clock and Timer~~ (GDScript)
 20. Random Password Generator
 21. Random Wikipedia Article
 22. Reddit Bot
 23. Python Command-Line Application
-24. Alarm Clock
+~~24. Alarm Clock~~ (GDScript)
 25. Tic-Tac-Toe
 26. Steganography
 27. Currency converter

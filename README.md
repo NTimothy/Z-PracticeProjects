@@ -35,9 +35,9 @@ Daily Punch-In Timer | Basic countdown timer application built using Godot with 
 
 ### List of Possible Python Projects
 ----------------------------------
-~~1. Mad Libs Generator~~
+1. ~~Mad Libs Generator~~
 2. Number Guessing
-~~3. Text-based Adventure Game~~ (Sugarcube 2.x)
+3. ~~Text-based Adventure Game~~ (Sugarcube 2.x)
 4. Dice Rolling Simulator
 5. Hangman
 6. Contact Book
@@ -52,20 +52,22 @@ Daily Punch-In Timer | Basic countdown timer application built using Godot with 
 15. Rock, Paper, Scissors
 16. Leap it!
 17. Find out, Fibonacci!
+
 Python Project Ideas: Intermediate Level
 18. Calculator
-~~19. Countdown Clock and Timer~~ (GDScript)
+19. ~~Countdown Clock and Timer~~ (GDScript)
 20. Random Password Generator
 21. Random Wikipedia Article
 22. Reddit Bot
 23. Python Command-Line Application
-~~24. Alarm Clock~~ (GDScript)
+24. ~~Alarm Clock~~ (GDScript)
 25. Tic-Tac-Toe
 26. Steganography
 27. Currency converter
 28. Post-it Notes
 29. Site Connectivity Checker
 30. Directory Tree Generator
+
 Python Project Ideas: Advanced Level
 31. Speed Typing Test
 32. Content Aggregator

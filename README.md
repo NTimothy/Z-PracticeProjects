@@ -14,6 +14,7 @@ My ongoing goal is to become proficient with Python and other programming langua
 
 ### Attempted Projects
 ------------------------
+*While completed/nearly completed projects may be uploaded online for archival reasons, other projects are not publically available online partly due to privacy concerns and/or their current state.
 
 Project | Description
 ------------ | -------------

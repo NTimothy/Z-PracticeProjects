@@ -39,7 +39,8 @@ def clean_data(boards):
 
     # 1. Create List of Boards
     # 2. Parses through each number and organizes a List of all boards,
-    # Each board contains a dict all its rows as a List, each value as an element
+    # Each board contains a dict of all its rows as lists & each value as an element
+    # within the list
     Boards = []
     _boardnum, _row, _num = 0, 0, 0
     while _num < len(board_values):

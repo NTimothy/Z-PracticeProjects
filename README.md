@@ -23,9 +23,9 @@ Virtual Casino  | Give player a set amount of virtual currency and allow player 
 Simple Webpage from Scratch | Basic framework using HTML and CSS
 Simple Text Adventure Demo | Built using Twine with SugarCube, CSS, and HTML
 2D RPG Style ~~Game~~ Demo | Built using Godot with GDScript, MSPaint, and GIMP
-Advent of Code (2019) | A series of programming puzzles
-Advent of Code (2020) | A series of programming puzzles
-Daily Punch-In Timer | Basic countdown timer application built using Godot with GDScript
+2D Space Shooter ~~Game~~ Demo | Built using Godot with GDScript, Aesprite
+Advent of Code | A series of programming puzzles
+Daily Punch-In Timer + Text Generator | Basic countdown timer application w/ RNG text generator built using Godot with GDScript with UI
 
 ### Other Programming Languages
 -------------------------

@@ -12,11 +12,22 @@ def read_file():
         f.close()
         return data, count
 
-def clean_data(boards):
+def clean_data(p_input,boards):
+
+    # Re-orders puzzle input into a list of integers
+    bingo_values = []
+    num = ""
+    for char in p_input:
+        if char == ",":
+            bingo_values.append(int(num))
+            num = ""
+        elif char != ",":
+            num += str(char)
+
+
     board_values = []
     _count = 0
     num = ""
-
     # Re-orders data into a single list containing only strings
     for line in boards:
         for char in line:
@@ -45,16 +56,18 @@ def clean_data(boards):
     _boardnum, _row, _num = 0, 0, 0
     while _num < len(board_values):
         if _row == 0:
-            _board = {0:[],1:[],2:[],3:[],4:[]}
+            _board = {0:[],1:[],2:[],3:[],4:[]}             # Create dict with 5 keys, 1 for each row of a board
         while _row < 5:
             _rem = _num % 5
             if _rem < 4:
-                _board[_row].append(int(board_values[_num]))
+                _board[_row].append(int(board_values[_num]))    # Fills in row 1 by 1
             elif _rem ==4:
-                _board[_row].append(int(board_values[_num]))
-                _row+=1
-                Boards.append(_board)
-            _num += 1
+                _board[_row].append(int(board_values[_num]))    # At the end of a row
+                _row+=1                                         #   move to next row
+            if (_row == 4) and (_rem==4):                       # At the end of the 5th row
+                Boards.append(_board)                           #   move to the next board
+            _num +=1
+
         _row = 0
         _boardnum +=1
     return Boards
@@ -62,14 +75,17 @@ def clean_data(boards):
 
 
 def part_one(input,boards):
-    pass
+    for num in boards:
+        print(num)
 
 
 data, count = read_file()
 p_input = data[0]
-Boards = clean_data(data[2:])
+Boards = clean_data(data[0],data[2:])
 
 # Print Debug
-print(p_input)
-print(Boards)
+# print(p_input)
+# print(Boards)
+
+part_one(p_input,Boards)
 

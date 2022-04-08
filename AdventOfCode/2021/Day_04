@@ -57,15 +57,15 @@ def clean_data(p_input,boards):
     while _num < len(board_values):
         if _row == 0:
             _board = {0:[],1:[],2:[],3:[],4:[]}             # Create dict with 5 keys, 1 for each row of a board
-        while _row < 5:
+        while _row < 5:                                     # Loops until all 5 rows are completed
             _rem = _num % 5
-            if _rem < 4:
-                _board[_row].append(int(board_values[_num]))    # Fills in row 1 by 1
-            elif _rem ==4:
-                _board[_row].append(int(board_values[_num]))    # At the end of a row
+            if _rem < 4:                                        # Fills values of row 1 by 1
+                _board[_row].append(int(board_values[_num]))    
+            elif _rem ==4:                                      # At the end of a row
+                _board[_row].append(int(board_values[_num]))    
                 _row+=1                                         #   move to next row
             if (_row == 4) and (_rem==4):                       # At the end of the 5th row
-                Boards.append(_board)                           #   move to the next board
+                Boards.append(_board)                           #   add to list of all bingo boards
             _num +=1
 
         _row = 0
@@ -76,7 +76,7 @@ def clean_data(p_input,boards):
 
 def part_one(input,boards):
     for num in boards:
-        print(num)
+        print(num)                                              # Test output
 
 
 data, count = read_file()

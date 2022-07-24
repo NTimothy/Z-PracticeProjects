@@ -21,13 +21,13 @@ due to process interruptions
  3. Run the application.
  4. A command prompt will appear, follow the instructions to proceed.
   
-   > Copy/Paste Path of Directory here
+   `Copy/Paste Path of Directory here`
    - Copy/Paste the path to your MicroSD folder
   
-   > New Folder Name?
+   `New Folder Name?`
    - Type the desired name for the new folder containing your media files
   
-   > File type?
+   `File type?`
    - Enter 'a' to copy all files
    - Enter 'b' to copy only screenshots (.jpg)
    - Enter 'c' to copy only video clips (.mp4)

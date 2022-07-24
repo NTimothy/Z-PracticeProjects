@@ -7,12 +7,10 @@ Using this python script, a user is able to copy all screenshots (.jpg), recorde
 Upon trying to extract recorded media from the Nintendo Switch, I was surprised to see the folder structure
 of an inserted MicroSD card to be organized by Date `\...\Year\Month\Day` despite the naming structure of the files already being named in a datetime format `YYYYMMDDhhmmssss-?` that allows for easy sorting. 
 
-For convenience, this program parses through all subfolders from the parent directory and copies them into a newly designated folder (and current date prepended) in the parent directory.
+For convenience, this program parses through all subfolders from the parent directory and copies them into a newly designated folder (and current date prepended) in the parent directory. The decision to 'copy' rather than 'move' was in order to prevent potential any file corruption and preserve original files on the Nintendo Switch MicroSD if desired.
 
 This script is able to re-copying files from all sub-folders from a parent directory in general, but since it was written specifically Nintendo switch media types, only .jpg and .mp4 are currently supported. However, additional file types can be added easily. 
 
-The decision to 'copy' rather than 'move' was in order to prevent potential original file corruption 
-due to process interruptions 
 
 ## How To
  1. Download the zip file

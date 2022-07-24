@@ -20,13 +20,13 @@ due to process interruptions
 3. Run the application. 
 4. A command prompt will appear, follow the instructions to proceed.
 > Copy/Paste Path of Directory here
-- Copy/Paste the path to your MicroSD folder
-> New Folder Name?
-- Type the desired name for the new folder containing your media files
->File type?
-- Enter 'a' to copy all files
-- Enter 'b' to copy only screenshots (.jpg)
-- Enter 'c' to copy only video clips (.mp4)
+\- Copy/Paste the path to your MicroSD folder
+\-> New Folder Name?
+\- Type the desired name for the new folder containing your media files
+\- >File type?
+\- - Enter 'a' to copy all files
+\- - Enter 'b' to copy only screenshots (.jpg)
+\- - Enter 'c' to copy only video clips (.mp4)
 5. After selection, the program will complete the operation and self-close. 
 Copied Files will be found in a newly named folder following the format: "YYYY-MM-DD _FolderName_"
 in the parent directory.

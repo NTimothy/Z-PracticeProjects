@@ -36,7 +36,7 @@ def directory_organize():
     file = "all"
     while _q:
         # Query file type
-        _file_type = input(""" Filetype?
+        _file_type = input(""" File type?
             a - All
             b - Photos (.jpg)
             c - Videos (.mp4)

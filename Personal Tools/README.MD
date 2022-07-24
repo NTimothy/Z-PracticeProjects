@@ -9,7 +9,7 @@ of an inserted MicroSD card to be organized by Date `\...\Year\Month\Day` despit
 
 For convenience, this program parses through all subfolders from the parent directory and copies them into a newly designated folder (and current date prepended) in the parent directory. The decision to 'copy' rather than 'move' was in order to prevent potential any file corruption and preserve original files on the Nintendo Switch MicroSD if desired.
 
-This script is able to re-copying files from all sub-folders from a parent directory in general, but since it was written specifically Nintendo switch media types, only .jpg and .mp4 are currently supported. However, additional file types can be added easily. 
+This script is able to copy all files from all sub-folders within a parent directory in general, but since it was written specifically Nintendo switch media types, only .jpg and .mp4 files are currently supported. Additional file types can be added easily in the future.
 
 
 ## How To

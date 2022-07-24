@@ -13,8 +13,10 @@ This script is able to copy all files from all sub-folders within a parent direc
 
 
 ## How To
- 1. Download the zip file
- 2. Navigate to the `"main.exe"` executable.
+### If Windows Executable
+
+ 1. Download the `.zip` file
+ 2. Navigate to `"main.exe"` executable within.
  3. Run the application.
  4. A command prompt will appear, follow the instructions to proceed.
   

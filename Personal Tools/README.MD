@@ -1,8 +1,7 @@
 # Clean File Sort for Nintendo Switch
 ## Description
 ### Summary
-Using this python script, a user is able to copy either screenshots (.jpg), recorded video clips (.mp4), or all types
-into a newly created folder. This program is written in Python for its readability and my own personal preference.
+Using this python script, a user is able to copy either screenshots (.jpg), recorded video clips (.mp4), or both into a newly created folder. This program is written in Python for its readability and my own personal preference.
 
 ### Full Explanation
 Upon trying to extract recorded media from the Nintendo Switch, I was surprised to see the folder structure
